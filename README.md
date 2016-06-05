@@ -1,50 +1,6 @@
 # React Static Boilerplate
 
-[![NPM version](http://img.shields.io/npm/v/generator-react-static.svg?style=flat-square)](https://www.npmjs.com/package/generator-react-static)
-[![NPM downloads](http://img.shields.io/npm/dm/generator-react-static.svg?style=flat-square)](https://www.npmjs.com/package/generator-react-static)
-[![Build Status](http://img.shields.io/travis/koistya/react-static-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/koistya/react-static-boilerplate)
-[![Dependency Status](http://img.shields.io/david/koistya/react-static-boilerplate.svg?branch=master&style=flat-square)](https://david-dm.org/koistya/react-static-boilerplate)
-[![GitHub Issues](https://img.shields.io/github/issues/koistya/react-static-boilerplate.svg?style=flat-square)](https://github.com/koistya/react-static-boilerplate/issues?q=is:open)
-[![To-do](https://img.shields.io/waffle/label/koistya/react-static-boilerplate/to-do.svg?style=flat-square)](https://waffle.io/koistya/react-static-boilerplate)
-[![In progress](https://img.shields.io/waffle/label/koistya/react-static-boilerplate/in%20progress.svg?style=flat-square)](https://waffle.io/koistya/react-static-boilerplate)
-
-> Static website starter kit powered by [React.js](http://facebook.github.io/react/) and [Webpack](http://webpack.github.io/)
-
-
-### Features
-
-&nbsp; &nbsp; ✓ Modern JavaScript syntax ([ES2015](http://babeljs.io/docs/learn-es2015/)+) via [Babel](http://babeljs.io/)<br>
-&nbsp; &nbsp; ✓ Modern CSS syntax (CSS3+) via [PostCSS](https://github.com/postcss/postcss)<br>
-&nbsp; &nbsp; ✓ Application state management via [Redux](http://redux.js.org/)<br>
-&nbsp; &nbsp; ✓ Routing and navigation via [React App](https://github.com/kriasoft/react-app), [Universal Router](https://github.com/kriasoft/universal-router), [History](https://github.com/mjackson/history)<br>
-&nbsp; &nbsp; ✓ Modular styles via [CSS Modules](https://github.com/css-modules/css-modules)<br>
-&nbsp; &nbsp; ✓ [Code-splitting](https://github.com/webpack/docs/wiki/code-splitting) and async chunk loading<br>
-&nbsp; &nbsp; ✓ Hot Module Replacement ([HMR](https://webpack.github.io/docs/hot-module-replacement.html)) /w [React Hot Loader](http://gaearon.github.io/react-hot-loader/)<br>
-&nbsp; &nbsp; ✓ Bundling and optimization with [Webpack](https://webpack.github.io/)<br>
-&nbsp; &nbsp; ✓ Cross-device testing with [Browsersync](https://browsersync.io/)<br>
-&nbsp; &nbsp; ✓ Easy deployment to [GitHub Pages](https://pages.github.com/), [Amazon S3](http://davidwalsh.name/hosting-website-amazon-s3) or [Firebase](https://www.firebase.com/)<br>
-&nbsp; &nbsp; ✓ [Yeoman](http://yeoman.io/) generator ([generator-react-static](https://www.npmjs.com/package/generator-react-static))<br>
-&nbsp; &nbsp; ✓ 24/7 community support on [Gitter](https://gitter.im/koistya/react-static-boilerplate) or [StackOverflow](http://stackoverflow.com/questions/tagged/react-starter-kit)<br>
-&nbsp; &nbsp; ✓ Customization requests on [Codementor](https://www.codementor.io/koistya)<br>
-
-
-### Sponsors
-
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/0/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/0/avatar.svg" height="64">
-</a> &nbsp;
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/1/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/1/avatar.svg" height="64">
-</a> &nbsp;
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/2/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/2/avatar.svg" height="64">
-</a> &nbsp;
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/3/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/3/avatar.svg" height="64">
-</a> &nbsp;
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/4/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/4/avatar.svg" height="64">
-</a>
+Built on [React Static Boilerplate](https://github.com/koistya/react-static-boilerplate) by koistya, static website starter kit powered by [React.js](http://facebook.github.io/react/) and [Webpack](http://webpack.github.io/)
 
 
 ### Directory Layout
@@ -100,14 +56,46 @@ $ npm test
 
 ### How to Deploy
 
+#### A: to GitHub Pages
 ```shell
-$ npm run deploy                # Deploys the project to GitHub Pages
+$ npm run deploy-gh
 ```
+
+#### B: to Surge
+- [Surge](https://surge.sh/)
+- [Routing doesn't work for github project pages](https://github.com/koistya/react-static-boilerplate/issues/58)
+
+
+```bash
+# Install surge
+$ npm install --global surge
+```
+
+```bash
+$ cd path/to/project
+$ surge
+```
+
+```js
+# package.json
+...
+  "scripts": {
+    ...
+    "deploy-surge": "npm build && surge -p build --domain <name-provided-by-surge>.surge.sh",
+    ...
+  }
+...
+```
+
+```shell
+$ npm run deploy-surge
+```
+
 
 Alternatively, you can build a production release to manually deploy to S3, Firebase, Netlify, and other static hosts. Simply run the command below and copy the generated `build` folder to your static host.
 
 ```shell
-$ npm run build release         # Build production release 
+$ npm run build release         # Build production release
 ```
 
 
@@ -121,52 +109,6 @@ $ git fetch react-static-boilerplate
 $ git merge react-static-boilerplate/master
 $ npm install
 ```
-
-
-### Backers
-
-Love **React Static Boilerplate** work and community? Help us keep it alive by [donating funds](https://opencollective.com/react-static-boilerplate#support) to cover project expenses!
-
-<a href="https://opencollective.com/react-static-boilerplate/backer/0/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/0/avatar.svg" height="64">
-</a>
-<a href="https://opencollective.com/react-static-boilerplate/backer/1/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/1/avatar.svg" height="64">
-</a>
-<a href="https://opencollective.com/react-static-boilerplate/backer/2/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/2/avatar.svg" height="64">
-</a>
-<a href="https://opencollective.com/react-static-boilerplate/backer/3/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/3/avatar.svg" height="64">
-</a>
-<a href="https://opencollective.com/react-static-boilerplate/backer/4/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/4/avatar.svg" height="64">
-</a>
-<a href="https://opencollective.com/react-static-boilerplate/backer/5/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/5/avatar.svg" height="64">
-</a>
-<a href="https://opencollective.com/react-static-boilerplate/backer/6/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/6/avatar.svg" height="64">
-</a>
-<a href="https://opencollective.com/react-static-boilerplate/backer/7/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/7/avatar.svg" height="64">
-</a>
-<a href="https://opencollective.com/react-static-boilerplate/backer/8/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/8/avatar.svg" height="64">
-</a>
-<a href="https://opencollective.com/react-static-boilerplate/backer/9/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/9/avatar.svg" height="64">
-</a>
-<a href="https://opencollective.com/react-static-boilerplate/backer/10/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/10/avatar.svg" height="64">
-</a>
-<a href="https://opencollective.com/react-static-boilerplate/backer/11/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/11/avatar.svg" height="64">
-</a>
-<a href="https://opencollective.com/react-static-boilerplate/backer/12/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/backer/12/avatar.svg" height="64">
-</a>
-
 
 ### Related Projects
 
@@ -191,6 +133,3 @@ Love **React Static Boilerplate** work and community? Help us keep it alive by [
 
 Copyright © 2015-2016 Konstantin Tarkus. This source code is licensed under the MIT license found in the
 [LICENSE.txt](https://github.com/koistya/react-static-boilerplate/blob/master/LICENSE.txt) file.
-
----
-Made with ♥ by Konstantin Tarkus ([@koistya](https://twitter.com/koistya)) and [contributors](https://github.com/koistya/react-static-boilerplate/graphs/contributors)

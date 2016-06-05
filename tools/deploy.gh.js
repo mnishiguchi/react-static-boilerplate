@@ -8,6 +8,8 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
+// Add this to cause error
+// https://github.com/koistya/react-static-boilerplate/issues/93
 const babelPolyfill = require('babel-polyfill');
 
 const GitRepo = require('git-repository');
@@ -15,7 +17,7 @@ const task = require('./task');
 
 const remote = {
   name: 'github',
-  url: 'https://github.com/mnishiguchi/react-static-boilerplate.git',
+  url: 'https://github.com/mnishiguchi/react-static-boilerplate.git', //<= Set up
   branch: 'gh-pages',
 };
 

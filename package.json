@@ -97,7 +97,8 @@
     "clean": "node tools/clean",
     "build": "node tools/build --release",
     "build:debug": "node tools/build",
-    "deploy": "node tools/deploy.gh --release",
+    "deploy-gh": "node tools/deploy.gh --release",
+    "deploy-surge": "npm build && surge -p build --domain functional-giraffe.surge.sh",
     "start": "node tools/start"
   }
 }
