@@ -57,6 +57,8 @@ $ npm test
 ### How to Deploy
 
 #### A: to GitHub Pages
+- Great for a simple app without router.
+
 ```shell
 $ npm run deploy-gh
 ```
